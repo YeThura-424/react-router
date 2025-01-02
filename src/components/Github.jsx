@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 
 const Github = () => {
-  const [data, setData] = useState();
+  // const [data, setData] = useState();
 
-  useEffect(() => {
-    fetch("https://api.github.com/users/yethura-424")
-      .then((response) => response.json())
-      .then((response) => setData(response));
-  });
+  // useEffect(() => {
+  //   fetch("https://api.github.com/users/yethura-424")
+  //     .then((response) => response.json())
+  //     .then((response) => setData(response));
+  // });
+
+  const data = useLoaderData();
+
   return (
     <>
       <div className="github-card-wrapper h-[350px] bg-slate-300 flex gap-x-6">
@@ -27,3 +31,8 @@ const Github = () => {
 };
 
 export default Github;
+
+export const githubLoader = async () => {
+  const response = await fetch("https://api.github.com/users/yethura-424");
+  return response.json();
+};

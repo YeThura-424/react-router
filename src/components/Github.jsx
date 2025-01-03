@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import UserContext from "../context/UserContext";
 
 const Github = () => {
   // const [data, setData] = useState();
@@ -11,6 +12,7 @@ const Github = () => {
   // });
 
   const data = useLoaderData();
+  const { user } = useContext(UserContext);
 
   return (
     <>
@@ -23,6 +25,7 @@ const Github = () => {
             <li className="py-4">User Name: {data?.login}</li>
             <li className="py-4">Company: {data.company}</li>
             <li className="py-4">Location: {data.location}</li>
+            <li className="py-4">UserId: {user?.userid}</li>
           </ul>
         </div>
       </div>

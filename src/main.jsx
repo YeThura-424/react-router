@@ -14,6 +14,7 @@ import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
 import User from "./components/User.jsx";
 import Github, { githubLoader } from "./components/Github.jsx";
+import UserContextProvider from "./context/UserContextProvider.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,6 +33,8 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <UserContextProvider>
+      <RouterProvider router={router} />
+    </UserContextProvider>
   </StrictMode>
 );

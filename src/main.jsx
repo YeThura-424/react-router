@@ -16,6 +16,7 @@ import User from "./components/User.jsx";
 import Github, { githubLoader } from "./components/Github.jsx";
 import UserContextProvider from "./context/UserContextProvider.jsx";
 import Todo from "./components/Todo.jsx";
+import { TodoV2 } from "./components/TodoV2.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
       </Route>
       <Route loader={githubLoader} path="github" element={<Github />} />
       <Route path="todo" element={<Todo />} />
+      <Route path="todo-v2" element={<TodoV2 />} />
       <Route path="*" element={<div>Not Found!!</div>} />
     </Route>
   )

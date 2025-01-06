@@ -6,7 +6,7 @@ import { store } from "../store/todoStore";
 
 export const TodoV2 = () => {
   return (
-    <div className="w-1/2 h-1/2 bg-green-300 p-8">
+    <div className="w-1/2 h-1/2 mx-auto bg-slate-300 p-8">
       <Provider store={store}>
         <Form />
         <Listing />

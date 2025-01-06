@@ -17,11 +17,17 @@ const Form = () => {
     <div className="w-full h-full">
       <form onSubmit={handelSubmit}>
         <input
+          className="py-2 px-3 rounded-l-xl w-[250px] focus:outline-none border border-blue-500"
           type="text"
           value={todoMsg}
           onChange={(e) => setTodoMsg(e.target.value)}
         />
-        <button type="submit">Add</button>
+        <button
+          className="px-4 py-2 border border-blue-500 bg-blue-500 rounded-r-xl"
+          type="submit"
+        >
+          Add
+        </button>
       </form>
     </div>
   );
